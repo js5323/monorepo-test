@@ -1,26 +1,21 @@
 {
-  "name": "common",
-  "version": "0.1.0",
-  "description": "> TODO: description",
-  "author": "Ben <js5323@hotmail.com>",
-  "homepage": "https://github.com/js5323/monorepo-test#readme",
-  "license": "ISC",
-  "main": "lib/common.js",
-  "directories": {
-    "lib": "lib",
-    "test": "__tests__"
-  },
+  "name": "@ben/common",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "files": [
-    "lib"
+    "dist"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/js5323/monorepo-test.git"
-  },
+  "main": "./dist/@ben-common-lib.umd.cjs",
+  "module": "./dist/@ben-common-lib.js",
   "scripts": {
-    "test": "node ./__tests__/common.test.js"
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "bugs": {
-    "url": "https://github.com/js5323/monorepo-test/issues"
+  "exports": {
+    ".": {
+      "import": "./dist/my-lib.js",
+      "require": "./dist/my-lib.umd.cjs"
+    }
   }
 }
