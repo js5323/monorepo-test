@@ -1,0 +1,19 @@
+{
+  "name": "project2",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "Ben <js5323@hotmail.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/project2.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "node ./__tests__/project2.test.js"
+  }
+}
