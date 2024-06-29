@@ -4,6 +4,9 @@
   "workspaces": [
     "packages/*"
   ],
+  "scripts": {
+    "build:all": "lerna run build"
+  },
   "dependencies": {},
   "devDependencies": {
     "lerna": "^8.1.5"
