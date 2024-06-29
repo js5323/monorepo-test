@@ -1,13 +1,13 @@
 import { useState } from 'react'
 import './App.css'
-import CommonComp from '@ben/common/components/CommonCompo'
+import TestComponent from '@ben/common/components/TestComponent/TextComponent'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <CommonComp />
+      <TestComponent title='test' />
       <h1>Project1: Vite + React</h1>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
