@@ -11,11 +11,5 @@
   "scripts": {
     "build": "vite build",
     "preview": "vite preview"
-  },
-  "exports": {
-    ".": {
-      "import": "./dist/my-lib.js",
-      "require": "./dist/my-lib.umd.cjs"
-    }
   }
 }
