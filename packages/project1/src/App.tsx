@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import TestComponent from '@ben/common/components/TestComponent/TextComponent'
+import TestComponent from '@ben/common/components/TestComponent'
 
 function App() {
   const [count, setCount] = useState(0)
