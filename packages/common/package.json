@@ -8,10 +8,6 @@
   ],
   "main": "index.ts",
   "module": "index.ts",
-  "scripts": {
-    "build": "vite build",
-    "preview": "vite preview"
-  },
   "dependencies": {
     "dayjs": "^1.11.11"
   }

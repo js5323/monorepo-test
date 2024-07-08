@@ -1,27 +1,60 @@
-import { useState } from 'react'
-import './App.css'
-import TestComponent from '@ben/common/components/TestComponent'
+import React from 'react';
+import type { DatePickerProps } from 'antd';
+import { Button, DatePicker, Drawer, Flex, Slider, Space, Typography } from 'antd';
+import dayjs from 'dayjs';
+import type { Dayjs } from 'dayjs';
+import { RangePickerProps } from 'antd/es/date-picker';
 
-function App() {
-  const [count, setCount] = useState(0)
+const onChange: RangePickerProps['onChange'] = (dates, dateStrings) => {
+  console.log(dates, dateStrings);
+};
+
+type DateComponent = Required<NonNullable<DatePickerProps<Dayjs>['components']>>['date'];
+type GetProps<T> = T extends React.ComponentType<infer P> ? P : never;
+
+const MyDatePanel = (props: GetProps<DateComponent>) => {
+  const { value, onSelect, onHover } = props;
+
+  const [innerValue, setInnerValue] = React.useState(value);
+
+  React.useEffect(() => {
+    if (value) {
+      setInnerValue(value);
+    }
+  }, [value]);
+
+
+  // Render
+  return (
+    <Flex vertical gap="small" style={{ padding: 16 }}>
+      test
+    </Flex>
+  );
+};
+
+
+
+export default function Home() {  
+
+  const [isOpen, setIsOpen] = React.useState(false)
+
+  const panelRender = (originalPanel:React.ReactNode) => {
+    return <Drawer open={isOpen} onClose={() => setIsOpen(false)} placement='bottom'>{originalPanel}</Drawer>;
+  };
 
   return (
-    <>
-      <TestComponent title='test' />
-      <h1>Project1: Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <Space direction="vertical">
+    <DatePicker.RangePicker
+      onClick={() => setIsOpen(true)}      
+      showNow={false}
+      onChange={onChange}
+      // components={{
+      //   date: MyDatePanel,
+      // }}
+      panelRender={
+        panelRender
+      }
+    />
+  </Space>
   )
 }
-
-export default App

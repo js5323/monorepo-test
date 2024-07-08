@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@ben/common": "^0.0.0",
+    "antd": "^5.19.1",
     "dayjs": "^1.11.11",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"

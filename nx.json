@@ -5,9 +5,7 @@
     },
     "dev": {
       "cache": true,
-      "dependsOn": [
-        "^dev"
-      ]
+      "dependsOn": ["^dev"]
     },
     "build": {
       "dependsOn": []
@@ -18,17 +16,5 @@
     "preview": {
       "dependsOn": []
     }
-  },
-  "plugins": [
-    {
-      "plugin": "@nx/vite/plugin",
-      "options": {
-        "buildTargetName": "vite:build",
-        "testTargetName": "test",
-        "serveTargetName": "serve",
-        "previewTargetName": "vite:preview",
-        "serveStaticTargetName": "serve-static"
-      }
-    }
-  ]
+  }
 }
